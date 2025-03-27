@@ -9,6 +9,7 @@ import {
   ALLOW_PROMPT_CHARACTERS,
   ASSISTANT_TYPE_ASSISTANT,
   ASSISTANT_TYPE_DEEPSEEK,
+  ASSISTANT_TYPE_OPENAI,
   ASSISTANT_TYPE_REALTIME,
   BUILD_IN_FUNCTIONS_DISABLE,
   BUILD_IN_FUNCTIONS_ENABLE,
@@ -53,6 +54,7 @@ export const supportedAssistantTypes = [
   { value: ASSISTANT_TYPE_REALTIME, label: 'Realtime' },
   { value: ASSISTANT_TYPE_ASSISTANT, label: 'STT -> Assistant -> TTS' },
   { value: ASSISTANT_TYPE_DEEPSEEK, label: 'STT -> DeepSeek -> TTS' },
+  { value: ASSISTANT_TYPE_OPENAI, label: 'STT -> OpenAI -> TTS' },
 ];
 
 const deepSeekFunctionCallingTypes = [

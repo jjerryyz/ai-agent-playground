@@ -4,6 +4,7 @@ import {
   ASSISTANT_TYPE_ASSISTANT,
   ASSISTANT_TYPE_DEEPSEEK,
   ASSISTANT_TYPE_DEFAULT,
+  ASSISTANT_TYPE_OPENAI,
   ASSISTANT_TYPE_REALTIME,
   ASSISTANT_TYPES,
   DEEPSEEK_FUNCTION_CALL_DISABLE,
@@ -57,6 +58,7 @@ class Profile {
   public isAssistant: boolean = this.assistantType === ASSISTANT_TYPE_ASSISTANT;
   public isRealtime: boolean = this.assistantType === ASSISTANT_TYPE_REALTIME;
   public isDeepSeek: boolean = this.assistantType === ASSISTANT_TYPE_DEEPSEEK;
+  public isOpenAI: boolean = this.assistantType === ASSISTANT_TYPE_OPENAI;
 
   setProperty<K extends keyof Profile>(key: K, value: Profile[K]) {
     Object.assign(this, { [key]: value });
@@ -129,6 +131,7 @@ export class Profiles {
       p.isAssistant = p.assistantType === ASSISTANT_TYPE_ASSISTANT;
       p.isRealtime = p.assistantType === ASSISTANT_TYPE_REALTIME;
       p.isDeepSeek = p.assistantType === ASSISTANT_TYPE_DEEPSEEK;
+      p.isOpenAI = p.assistantType === ASSISTANT_TYPE_OPENAI;
 
       p.supportedAssistantType =
         supportedAssistantTypes.find((type) => type.value === p.assistantType)
