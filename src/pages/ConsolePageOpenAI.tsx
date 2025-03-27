@@ -255,16 +255,16 @@ export function ConsolePageOpenAI() {
   };
 
   const connectConversation = useCallback(async () => {
-    const deepSeekTargetUri = profile?.deepSeekTargetUri || '';
-    const deepSeekApiKey = profile?.deepSeekApiKey || '';
-    if (!deepSeekTargetUri || !deepSeekApiKey) {
+    const completionApiKey = profile?.completionApiKey || '';
+    const completionTargetUri = profile?.completionTargetUri || '';
+    if (!completionApiKey || !completionTargetUri) {
       setConnectStatus(CONNECT_DISCONNECTED);
-      setConnectMessage('Please set the DeepSeek Target URI and key');
+      setConnectMessage('Please set the OpenAI Target URI and key');
       return;
     }
 
     setConnectStatus(CONNECT_CONNECTING);
-    setConnectMessage('Connecting to DeepSeek...');
+    setConnectMessage('Connecting to OpenAI...');
     setConnectStatus(CONNECT_CONNECTED);
     setConnectMessage('');
     // eslint-disable-next-line react-hooks/exhaustive-deps
